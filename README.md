@@ -1,1 +1,3 @@
 "# DesenvSoftNuvem" 
+
+npm start 
