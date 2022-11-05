@@ -3,12 +3,26 @@
 <div class="cta">
   <div class="container">
     <div class="conteudo">
-      <h2>O melhor lugar para alugar  Brinquedos Infláveis</h2>
+      <h2>O melhor lugar para alugar Brinquedos Infláveis</h2>
       <p>Nossos brinquedos são preenchidos com ar reciclado e biodegradável, importado diretamente do Himalaia.</p>
       <a  class="bt_padrao" href="#produtos">Ver Opções</a>
     </div>
   </div>
 </div>
+
+<% if(typeof msg !== 'undefined'){ %> 
+  <div class="alert alert-<%= (typeof msgType !== 'undefined') ? msgType: "danger"%>" role="alert">
+    <p><%= msg%></p>
+  </div>
+<% } %>
+
+<%if(typeof user !== 'undefined'){%>
+<script defer>
+  let curUser = <%- JSON.stringify(user); %>;
+  localStorage.setItem('user', curUser);
+  console.log(curUser);
+</script>
+<%}%>
 
 <%- include('./components/secProdutos.ejs'); %>
 

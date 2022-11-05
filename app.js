@@ -1,9 +1,9 @@
 const express = require("express");
-const bcrypt = require("bcrypt");
-const { register } = require("./modules/users");
+const { register, login } = require("./modules/users");
 
 const app = express();
 const port = 3000;
+
 
 app.use(express.static("public"));
 app.use("/css", express.static(__dirname + "public/css"));
@@ -16,11 +16,9 @@ app.set("view engine", "ejs");
 //Evitar que os campos fiquem vazios ao enviar o formulário
 app.use(express.urlencoded({ extended: false }));
 
-
-const users = [];
-
 //Rota de cadastro
 app.post("/register", register);
+app.post("/login", login);
 
 // Paginas estaticas HTML
 app.get("/", (req, res) => {
