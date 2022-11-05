@@ -1,0 +1,253 @@
+/* font-family: 'Kaushan Script', cursive;
+font-family: 'Roboto', sans-serif; */
+
+:root {
+  --primary: #C73C49;
+  --secondary: #354F9B;
+  --text: #E9E9E9;
+}
+
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background-color: var(--text);
+}
+
+a.bt_card, a.bt_padrao{
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+
+a.bt_padrao{
+  border: 1px solid var(--text);
+  padding: 10px 20px;
+}
+
+a.bt_padrao:hover, a.bt_card:hover{
+  color: var(--secondary);
+  font-weight: bold;
+  background-color: var(--text);
+}
+
+a.bt_card{
+  border: 2px solid var(--text);
+  padding: 10px 28px;
+}
+
+.bt_secundario{
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+  background-color: var(--secondary);
+  outline: none;
+  padding: 5px 20px;
+  margin: auto;
+  border: none;
+}
+
+
+/* NAVBAR */
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.logo{
+  max-height: 35px;
+  padding-right: 10px;
+}
+
+.navbar-brand{
+  font-family: 'Kaushan Script', cursive;
+  font-size: 20px;
+  color: var(--text);
+}
+.navbar{
+  background-color: var(--secondary);
+}
+.navbar .navbar-toggler:focus, .nav-item .nav-link{
+  color: #E9E9E9;
+  transition: all 0.3s ease-in-out;
+}
+.nav-item .nav-link:hover, .navbar-brand:hover{
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Call to action */
+div.cta{
+  min-height: 500px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90.29deg, rgba(0, 0, 0, 0) 5.46%, rgba(0, 0, 0, 0.57) 52.26%), linear-gradient(101.1deg, rgba(53, 79, 155, 0.49) 4.38%, rgba(199, 60, 73, 0.49) 95.54%), url('../img/produto4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.cta .container{
+  display: flex;
+  justify-content: flex-end;
+}
+.cta .container .conteudo{
+  text-align: center;
+  z-index: 1;
+  width: 50%;
+  min-width: 450px;
+}
+@media (max-width: 800px) {
+  .cta .container{
+    justify-content: center;
+  }
+}
+
+.conteudo h2{
+  font-family: 'Kaushan Script';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 58px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.conteudo p{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* //secProdutos */
+.secProdutos{
+  background-color: var(--secondary);
+  color: var(--text);
+  padding: 50px 0;
+}
+
+h3.produtosHeader{
+  margin: 40px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.carousel-item.active, .carousel-item-next, .carousel-item-prev{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.carousel-inner .card{
+  border-radius: 10px;
+  margin: 0 20px;
+  min-height: 380px;
+  margin-bottom: 70px;
+  color: var(--text);
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .carousel-item.active, .carousel-item-next, .carousel-item-prev{
+    flex-direction: column;
+  }
+  .carousel-inner .card{
+    margin-bottom: 20px;
+  }
+  .carousel-inner .card:last-child{
+    margin-bottom: 70px;
+  }
+}
+.carousel-inner .card-body{
+  background-color: var(--secondary) !important;
+}
+
+.carousel-inner .card-body h5{
+  font-family: 'Kaushan Script';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.carousel-inner .card-body p{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.carousel-indicators button{
+  height: 23px !important;
+  width: 23px !important;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 0px var(--secondary);
+  background-color: var(--primary) !important;
+  transition: all 0.3s ease-in-out !important;
+  opacity: 1 !important;
+}
+.carousel-indicators button.active{  
+  box-shadow: inset 0px 0px 0px 5px var(--secondary);
+}
+
+/* footer */
+
+.footer{
+  width: 100%;
+  background-color: var(--secondary);
+  color: var(--text);
+  padding: 15px 0 10px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer p{
+  margin-bottom: 0;
+}
+
+/* formulario de login */
+
+section.login h3{
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: var(--secondary);
+  margin: 30px 0;
+}
+section.login form{
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section.login .form-group{
+  width: 100%;
+  margin-bottom: 20px;
+}

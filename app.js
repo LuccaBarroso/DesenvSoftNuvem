@@ -11,8 +11,18 @@ app.use("/img", express.static(__dirname + "public/img"));
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
-app.get("", (req, res) => {
+
+// Routes
+app.get("/", (req, res) => {
   res.render("index", {text: "Hello World"});
+});
+
+app.get("/login", (req, res) => {
+  res.render("login", {text: "Hello World"});
+});
+
+app.get("/register", (req, res) => {
+  res.render("register", {text: "Hello World"});
 });
 
 app.listen(port, () => {

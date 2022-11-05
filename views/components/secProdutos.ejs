@@ -1,0 +1,63 @@
+<% 
+  let produtos = [
+    {id: 0, name: 'Touro Mecânico', description: "Nenhum touro foi machucado durante a produção dessse brinquedo", price: 1000, img: 'img/produto1.jpg'},
+    {id: 1, name: 'Touro Mecânico', description: "Nenhum touro foi machucado durante a produção dessse brinquedo", price: 1000, img: 'img/produto2.jpg'},
+    {id: 2, name: 'Touro Mecânico', description: "Nenhum touro foi machucado durante a produção dessse brinquedo", price: 1000, img: 'img/produto3.jpg'},
+    {id: 3, name: 'Touro Mecânico', description: "Nenhum touro foi machucado durante a produção dessse brinquedo", price: 1000, img: 'img/produto4.jpg'},
+    {id: 4, name: 'Touro Mecânico', description: "Nenhum touro foi machucado durante a produção dessse brinquedo", price: 1000, img: 'img/produto5.jpg'},
+    {id: 5, name: 'Touro Mecânico', description: "Nenhum touro foi machucado durante a produção dessse brinquedo", price: 1000, img: 'img/produto6.jpg'},
+    {id: 6, name: 'Touro Mecânico', description: "Nenhum touro foi machucado durante a produção dessse brinquedo", price: 1000, img: 'img/produto7.jpg'},
+    {id: 7, name: 'Touro Mecânico', description: "Nenhum touro foi machucado durante a produção dessse brinquedo", price: 1000, img: 'img/produto8.jpg'},
+  ]
+
+  // agrupa os produtos em grupos de 3
+  function groupArr(data, n) {
+    var group = [];
+    for (var i = 0, j = 0; i < data.length; i++) {
+        if (i >= n && i % n === 0)
+            j++;
+        group[j] = group[j] || [];
+        group[j].push(data[i])
+    }
+    return group;
+  }
+
+  let produtosGroup = groupArr(produtos, 3)
+
+  let qntPaginas = produtosGroup.length; %>
+
+<h3 class="produtosHeader">Veja alguns de nossos produtos</h3>
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <% for(var i=0; i<qntPaginas; i++) {%>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="<%= i%>" class="<%= (i==0)?"active":""%>" aria-current="true" aria-label="Slide <%= i+1%>"></button>
+    <% } %>
+  </div>
+
+  <div class="carousel-inner">
+      <% for(var i=0; i<qntPaginas; i++) {%>
+          <% let group = produtosGroup[i]; %>
+          <div class="carousel-item <%= (i==0)?"active":""%>" data-bs-interval="10000">
+          <% group.forEach((produto, index) => {%>
+              <div class="card" style="width: 18rem;">
+                <img height="157px" class="card-img-top" src="<%= produto.img %>" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><%= produto.name %></h5>
+                  <p class="card-text"><%= produto.description %></p>
+                  <a href="/produtos/<%= produto.id %>" class="bt_card">Mais Informações</a>
+                </div>
+              </div>
+              <%}); %>
+            </div>
+      <% } %>
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

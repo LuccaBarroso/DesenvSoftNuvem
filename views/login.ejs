@@ -1,0 +1,25 @@
+<%- include('./components/header.ejs', {title: "Home - Inflaveis"}); %>
+
+<section class="login">
+  <div class="container">
+    <h3>Entre na sua conta</h3>
+    <form action="">
+      <!-- formualrio de login -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" class="form-control" id="senha" placeholder="Digite sua senha">
+      </div>
+      <p>Ainda não tem uma conta?<a href="/register"> cadastre-se aqui!</a> </p>
+      <button type="submit" class="bt_secundario">Entrar</button>
+    </form>
+  </div>
+</section>
+
+<%- include('./components/secProdutos.ejs'); %>
+
+
+<%- include('./components/footer.ejs'); %>
