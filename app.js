@@ -1,4 +1,6 @@
 const express = require("express");
+const bcrypt = require("bcrypt");
+const { register } = require("./modules/users");
 
 const app = express();
 const port = 3000;
@@ -11,18 +13,26 @@ app.use("/img", express.static(__dirname + "public/img"));
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
+//Evitar que os campos fiquem vazios ao enviar o formulário
+app.use(express.urlencoded({ extended: false }));
 
-// Routes
+
+const users = [];
+
+//Rota de cadastro
+app.post("/register", register);
+
+// Paginas estaticas HTML
 app.get("/", (req, res) => {
-  res.render("index", {text: "Hello World"});
+  res.render("index");
 });
 
 app.get("/login", (req, res) => {
-  res.render("login", {text: "Hello World"});
+  res.render("login");
 });
 
 app.get("/register", (req, res) => {
-  res.render("register", {text: "Hello World"});
+  res.render("register");
 });
 
 app.listen(port, () => {

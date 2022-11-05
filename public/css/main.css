@@ -238,6 +238,7 @@ section.login h3{
   color: var(--secondary);
   margin: 30px 0;
 }
+
 section.login form{
   max-width: 400px;
   margin: 0 auto;
@@ -247,7 +248,10 @@ section.login form{
   justify-content: center;
 }
 
-section.login .form-group{
+section.login .form-group, section.login .alert{
   width: 100%;
   margin-bottom: 20px;
+}
+.alert p{
+  margin-bottom: 0;
 }
