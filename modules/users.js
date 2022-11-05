@@ -1,7 +1,6 @@
 const bcrypt = require("bcrypt");
 
 const saltRounds = 10;
-var password = process.env.SECRET_KEY;
 
 const users = [];
 

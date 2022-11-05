@@ -157,7 +157,7 @@ h3.produtosHeader{
 .carousel-inner .card{
   border-radius: 10px;
   margin: 0 20px;
-  min-height: 380px;
+  min-height: 400px;
   margin-bottom: 70px;
   color: var(--text);
   text-align: center;
