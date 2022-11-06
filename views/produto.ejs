@@ -1,8 +1,14 @@
 <%- include('./components/header.ejs', {title: "Logar-se - Inflaveis"}); %>
 
-<section>
-    <%= produto.name %>
-    <a id="aluguel" href="/aluguel/<%= produto.id %>" class="bt_secundario">Alugar</a>
+<section class="secProduto">
+    <div class="container">
+        <h2><%= produto.name %></h2>
+        <p><%= produto.description %></p>
+        <p>R$<%= produto.price %>,00</p>
+        <img src="/<%= produto.img %> " alt="">
+        <a id="aluguel" href="/aluguel/<%= produto.id %>" class="bt_secundario">Alugar</a><br>
+        <a href="/">Veja outros produtos!</a>
+    </div>
 </section>
 
 <script defer>
