@@ -1,0 +1,73 @@
+<%- include('./components/header.ejs', {title: "Aluguel - Inflaveis"}); %>
+
+<section class="aluguel">
+  <div class="container">
+    <h3>Alugue um dos brinquedos infláveis</h3>
+    <% if(typeof msg !== 'undefined'){ %> 
+      <div class="alert alert-<%= (typeof msgType !== 'undefined') ? msgType: "danger"%>" role="alert">
+        <p><%= msg%></p>
+      </div>
+    <% } %>
+      <form action="/aluguel/<%= produto.id %>" method="POST">
+        <div class="form-group">
+          <label>Produto escolhido: <%= produto.name %> </label>
+        </div>
+      <div hidden>
+        <input id="email" type="text" name="email" class="form-control" value="" readonly>
+        <input id="idusuario" type="text" name="idusuario" class="form-control" value="" readonly>
+      </div>
+      <div class="form-group">
+        <label for="cep">CEP</label>
+        <input type="text" name="cep" class="form-control" id="cep" placeholder="Digite seu CEP">
+      </div>
+      <div class="form-group">
+        <label for="identificacao">Identificação</label>
+        <input type="text" name="identificacao" class="form-control" id="identificacao" placeholder="Ex.: Condomínio belas flores.">
+      </div>
+      <div class="form-group">
+        <label for="logradouro">Logradouro</label>
+        <input type="text" name="logradouro" class="form-control" id="logradouro" placeholder="Digite seu logradouro">
+      </div>
+      <div class="form-group">
+        <label for="numero">Número</label>
+        <input type="number" name="numero" class="form-control" id="numero" placeholder="Digite o número da sua residência">
+      </div>
+      <div class="form-group">
+        <label for="complemento">Complemento</label>
+        <input type="text" name="complemento" class="form-control" id="complemento" placeholder="Complemento ao seu endereço">
+      </div>
+      <div class="form-group">
+        <label for="referencia">Referência</label>
+        <input type="text" name="referencia" class="form-control" id="referencia" placeholder="Detalhe de referência">
+      </div>
+      <div class="form-group">
+        <label for="bairro">Bairro</label>
+        <input type="text" name="bairro" class="form-control" id="bairro" placeholder="Digite seu bairro">
+      </div>
+      <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" class="form-control" id="cidade" placeholder="Digite sua cidade">
+      </div>
+      <div class="form-group">
+        <label for="uf">UF</label>
+        <input type="text" name="uf" class="form-control" id="uf" placeholder="Digite sua unidade federal">
+      </div>
+      <label class="form-label" for="forma-pagamento" >Forma de pagamento</label>
+      <select name="pagamento" class="form-select" id="forma-pagamento">
+        <option selected disabled value="">Selecione...</option>
+        <option>Pix</option>
+        <option>Boleto bancário</option>
+        <option>Cartão de crédito</option>
+      </select>
+      <br/>
+      <button type="submit" class="bt_secundario">Cadastrar</button>
+    </form>
+  </div>
+</section>
+
+<script defer>
+  document.getElementById('email').value = JSON.parse(localStorage.user).email;
+  document.getElementById('idusuario').value = JSON.parse(localStorage.user).id;
+</script>
+
+<%- include('./components/footer.ejs'); %>
