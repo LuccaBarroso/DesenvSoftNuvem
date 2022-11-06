@@ -33,7 +33,7 @@ const aluguel = (req, res) => {
 
 	addAlugueis(aluguel);
 
-	return res.render("aluguel", { produto: produto, msg: "Brinquedo reservado com sucesso!", msgType: "success"  });
+	return res.render("agradecimento", { usuario: usuario }); 
 };
 
 module.exports = {

@@ -51,7 +51,9 @@ app.get("/produto/:id", (req, res) => {
 	res.render("produto", { produto: produto(req.params.id) });
 });
 
-
+app.get("/agradecimento", (req, res) => {
+	res.render("agradecimento");
+});
 
 app.listen(port, () => {
 	console.log(`Example app listening at http://localhost:${port}`);
