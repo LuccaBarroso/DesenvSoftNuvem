@@ -4,7 +4,7 @@ const { produto, aluguel } = require("./modules/produtos");
 const { getProdutos, getAlugueis, getAlugueisByUser } = require("./modules/db");
 
 const app = express();
-const port = 3000;
+const port = process.env.port || 3000;
 
 app.use(express.static("public"));
 app.use("/css", express.static(__dirname + "public/css"));
