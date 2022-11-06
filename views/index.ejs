@@ -9,12 +9,13 @@
     </div>
   </div>
 </div>
-
-<% if(typeof msg !== 'undefined'){ %> 
-  <div class="alert alert-<%= (typeof msgType !== 'undefined') ? msgType: "danger"%>" role="alert">
-    <p><%= msg%></p>
-  </div>
-<% } %>
+<div class="container index">
+  <% if(typeof msg !== 'undefined'){ %> 
+    <div class="alert alert-<%= (typeof msgType !== 'undefined') ? msgType: "danger"%>" role="alert">
+      <p><%= msg%></p>
+    </div>
+  <% } %>
+</div>
 
 <%if(typeof user !== 'undefined'){%>
 <script defer>

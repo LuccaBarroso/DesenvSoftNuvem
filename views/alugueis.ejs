@@ -1,8 +1,25 @@
 <%- include('./components/header.ejs', {title: "Alugueis - Inflaveis"}); %>
 
-<section class="aluguel">
+<section class="secAlugueis">
 	<div class="container">
-		<%= alugueis[0] %>
+		<h2>Seus Alugueis</h2>
+		<%if(typeof alugueis !== 'undefined' && alugueis.length > 0){%>
+			<% for(let i = 0; i<alugueis.length; i++){%>
+				<div class="aluguelCard">
+					<img src="/<%= alugueis[i].produto.img %>" alt="">
+					<div class="aluguelContent">
+						<h3><%= alugueis[i].produto.name %></h3>
+						<p>Valor: R$<%= alugueis[i].produto.price  %> </p>
+						<p>CEP do Local: <%= alugueis[i].endereco.cep  %> </p>
+						<a href="/aluguel/<%= alugueis[i].produto.id %>" class="bt_card">Alugar novamente</a>
+					</div>
+				</div>
+			<%} %>
+		<%}else{%>
+			<div class="alert alert-warning" role="alert">
+				<p>Você não tem nenhum aluguel ainda!</p>
+			</div>
+		<%}%>
 	</div>
 </section>
 

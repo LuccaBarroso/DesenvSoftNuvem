@@ -1,7 +1,7 @@
 const express = require("express");
 const { register, login } = require("./modules/users");
 const { produto, aluguel } = require("./modules/produtos");
-const { getProdutos, getAlugueis } = require("./modules/db");
+const { getProdutos, getAlugueis, getAlugueisByUser } = require("./modules/db");
 
 const app = express();
 const port = 3000;
@@ -43,8 +43,7 @@ app.get("/aluguel/:id", (req, res) => {
 });
 
 app.get("/alugueis/:id", (req, res) => {
-	console.log(getAlugueis());
-	res.render("alugueis", { alugueis: getAlugueis().find(e => e.user.id === req.params.id) });
+	res.render("alugueis", { alugueis: getAlugueisByUser(req.params.id) });
 });
 
 app.get("/produto/:id", (req, res) => {

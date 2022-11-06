@@ -29,6 +29,12 @@ const getAlugueis = () => {
 	return alugueis;
 };
 
+const getAlugueisByUser = (id) => {
+	let alugueisByUser = alugueis.filter((aluguel) => aluguel.user.id === id);;
+	console.log(alugueisByUser);
+	return alugueisByUser;
+};
+
 const addAlugueis = (aluguel) => {
 	alugueis.push(aluguel);
 };
@@ -36,7 +42,8 @@ const addAlugueis = (aluguel) => {
 module.exports = {
 	getProdutos,
 	getUsers,
-    addUser,
-    getAlugueis,
-    addAlugueis,
+	addUser,
+	getAlugueis,
+	getAlugueisByUser,
+	addAlugueis,
 };
